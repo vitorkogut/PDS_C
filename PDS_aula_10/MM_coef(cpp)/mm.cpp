@@ -19,7 +19,7 @@ int main() {
     }
 
     int contador = 0;
-    short var, data[tamanho];
+    float var, data[tamanho];
     while(contador < tamanho){
         arquivo.read((char *)&var, 2 );
         data[contador] = var;
@@ -30,17 +30,10 @@ int main() {
 
 
 // LEITURA DOS COEFS
-    ifstream coefs("Coef_PB.dat", std::ios::binary);
-    if(!coefs){
-        cerr << "Unable to open file datafile.txt";
-        exit(1);   // call system to stop
-    }
-    int contador_coef = 0;
-    float var_coef, data_coef[tamanho_coef];
-    while(coefs.read(reinterpret_cast<char*>(&var_coef), sizeof(float))){
-        data_coef[contador_coef] = var_coef;
-        contador_coef++;
-    }
+   float data_coef[tamanho_coef] = {
+        #include "Coef_PB.dat"
+        };
+
 
 
 // FAZ A MEDIA
@@ -53,24 +46,28 @@ int main() {
 
     for( int i = 0; i < tamanho; i++){
 
-        float media_atual = 0;
+        float media_atual = 0.0;
         for(int j=0; j<tamanho_coef; j++){
-            media_atual = media_atual + (vals_media[j] * data_coef[j]);
+            media_atual = media_atual + ( float(vals_media[j]) * float(data_coef[j]) );
+            if(media_atual>0){
+                //cout<<"MED: " << media_atual << "  " << vals_media[j] << " * " << data_coef[j]<<endl;
+            }
         }
+        //cout<<"ESSA MEDIA: " << media_atual<<endl;
 
         media[i] = media_atual;
 
-        //cout<<media[i]<<endl;
-
         vals_media.erase( vals_media.begin() );
         vals_media.push_back(data[i]);
+
+
     }
 
 
     ofstream arq_saida;
     arq_saida.open("saida.pcm", std::ios::out | std::ios::binary);
     for(int i=0; i<tamanho;i++){
-        arq_saida.write( (char *)&data[i],sizeof(float));
+        arq_saida.write( (char *)&media[i],sizeof(float));
     }
     arq_saida.close();
 
