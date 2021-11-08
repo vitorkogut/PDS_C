@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1634218545 source:c:\users\vitor\desktop\mm_c\mm.cpp
+	<iostream>
+	<fstream>
+	<vector>
+
+1636327715 source:c:\users\vitor\desktop\pds_c\pds_c\mm\mm.cpp
+	<iostream>
+	<fstream>
+	<vector>
+
