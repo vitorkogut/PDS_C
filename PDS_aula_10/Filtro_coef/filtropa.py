@@ -37,6 +37,12 @@ for j in range(100,4999):
         Y[j] = Y[j] + X[j - i] * H[i]
 
 
+for k in range(M):
+    H[k] = H[k] * -1
+    if( k == M/2):
+        H[k] = 1 - H[k]
+
+
 
 print(H)
 
@@ -59,11 +65,11 @@ plt.tight_layout()
 plt.show()
 
 
-with open("Coef_PB.dat", "w") as f:
+with open("PDS_C/PDS_aula_10/Coef_PB.dat", "w") as f:
     for s in H:
         f.write(str(s) +",\n")
 
 H = []
-with open("Coef_PB.txt", "r") as f:
+with open("PDS_C/PDS_aula_10/Filtro_coef/Coef_PB.txt", "r") as f:
   for line in f:
     H.append(float(line.strip()))

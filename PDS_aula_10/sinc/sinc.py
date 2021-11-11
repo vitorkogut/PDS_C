@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 
 #data = numpy.memmap("PDS_aula_10/sinc/degrauun.pcm", dtype='h', mode='r')
-data = numpy.ones(50)
+data = numpy.ones(120)
 Fc = float(input("Fc:"))
 
-saida = numpy.ones(50)
+saida = numpy.ones(120)
 
 pointer = 1
 
