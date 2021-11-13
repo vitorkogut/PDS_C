@@ -65,11 +65,7 @@ plt.tight_layout()
 plt.show()
 
 
-with open("PDS_C/PDS_aula_10/Coef_PB.dat", "w") as f:
+with open("Coef_PA.dat", "w") as f:
     for s in H:
         f.write(str(s) +",\n")
 
-H = []
-with open("PDS_C/PDS_aula_10/Filtro_coef/Coef_PB.txt", "r") as f:
-  for line in f:
-    H.append(float(line.strip()))

@@ -63,7 +63,3 @@ with open("Coef_PB.dat", "w") as f:
     for s in H:
         f.write(str(s) +",\n")
 
-H = []
-with open("Coef_PB.txt", "r") as f:
-  for line in f:
-    H.append(float(line.strip()))

@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1634650743 source:d:\faculdade\pds\m2\aula8\mediamovel\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+
+1636380783 source:c:\users\nicole magagnin\documents\faculdade\pds\m2\aula8\mediamovel\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"Coef_PB.dat"
+
+1636375249 c:\users\nicole magagnin\documents\faculdade\pds\m2\aula8\mediamovel\coef_pb.dat
+
+1636672299 source:c:\users\vitor\desktop\pds_c\pds_c\aula8\mediamovel\main.cpp
+	<stdio.h>
+	<fcntl.h>
+	<io.h>
+	"Coef_RF.dat"
+
+1636673559 c:\users\vitor\desktop\pds_c\pds_c\aula8\mediamovel\coef_rf.dat
+

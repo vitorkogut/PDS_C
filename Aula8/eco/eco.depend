@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1634650028 source:d:\faculdade\pds\m2\aula8\eco\main.cpp
+	<iostream>
+	<fstream>
+
