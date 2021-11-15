@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <io.h>
-#define tamanho_coef 320
+#define tamanho_coef 1764
 
 int main() {
     FILE *in_file, *out_file;
@@ -16,7 +16,7 @@ int main() {
     };
 
 
-    if ((in_file = fopen("sweep_100_2k.pcm", "rb")) == NULL){ // Sinal de entrada
+    if ((in_file = fopen("RDI.wav", "rb")) == NULL){ // Sinal de entrada
         printf("\nErro: Não abriu o arquivo de entrada\n");
         return 0;
     }
