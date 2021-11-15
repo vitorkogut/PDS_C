@@ -18,6 +18,7 @@ def geraRF():
 
     for i in range(len(Hb)):
         if(i - M/2) == 0:
+            
             Hb[i] = 2 * numpy.pi * fcb
         if(i - M/2) != 0:
             Hb[i] = numpy.sin(2 * numpy.pi * fcb * (i - M/2)) / (i - M/2)
@@ -81,18 +82,12 @@ def geraRF():
     return(H)
 
 
-one = geraRF()
-second = geraRF()
+realSaida = geraRF()
 
-
-realSaida = []
-for i in range(len(one)-1):
-    realSaida.append( float(one[i]) + float(second[i]) )
-
-#diplayer = realSaida
-#[w, diplayer] = sf.freqz(diplayer, 1, 8000)
-#plt.plot(w*8000/(2*numpy.pi), 20*numpy.log10(abs(diplayer)))
-#plt.show()
+diplayer = realSaida
+[w, diplayer] = sf.freqz(diplayer, 1, 8000)
+plt.plot(w*8000/(2*numpy.pi), 20*numpy.log10(abs(diplayer)))
+plt.show()
 
 with open("Coef_RF.dat", "w") as f:
     for i in range(len(realSaida)):
